@@ -299,3 +299,16 @@ a { color: inherit; text-decoration: none; }
   .form-section { grid-template-columns: 1fr; }
   .highlight { flex-direction: column; align-items: flex-start; }
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
