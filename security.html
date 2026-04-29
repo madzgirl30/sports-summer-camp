@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Explanation | Camp SparkMotion</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header"><nav class="navbar"><a class="logo" href="index.html">Camp SparkMotion</a><button class="nav-toggle" aria-label="Toggle navigation">☰</button><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="programs.html">Programs</a></li><li><a href="schedule.html">Schedule</a></li><li><a href="team.html">Team</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="faq.html">FAQ</a></li><li><a href="register.html">Register</a></li></ul></nav></header>
+<main>
+  <section class="page-hero compact"><h1>Security Issue Explanation</h1><p>This page explains the intentional security issue included for the project requirement.</p></section>
+  <section class="section">
+    <div class="info-box">
+      <h2>Intentional Vulnerability</h2>
+      <p>The registration page uses JavaScript to place the camper comment into the page with <code>innerHTML</code>. That can create a reflected cross-site scripting issue if someone types HTML or JavaScript-like content into the form.</p>
+      <h2>How to Explain It</h2>
+      <p>In the video, explain that the vulnerability is only for demonstration. A secure version would use <code>textContent</code>, validate all user input, sanitize comments, and never trust information typed into a form.</p>
+      <h2>Secure Parts</h2>
+      <p>The form uses basic required fields, input types, age limits, and JavaScript validation. The links are local files and should not be broken when the folder structure stays the same.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><p>&copy; 2026 Camp SparkMotion. Created for HTML project demonstration.</p></footer><script src="js/main.js"></script></body>
+</html>
