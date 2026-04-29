@@ -137,52 +137,7 @@
     <p>&copy; 2026 Camp SparkMotion. All rights reserved.</p>
   </footer>
 
-  <script>
-    const campForm = document.getElementById("campForm");
-    const previewSection = document.getElementById("previewSection");
-    const formPreview = document.getElementById("formPreview");
-
-    campForm.addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const camperName = document.getElementById("camperName").value;
-      const age = document.getElementById("age").value;
-      const program = document.getElementById("program").value;
-      const parentEmail = document.getElementById("parentEmail").value;
-      const comment = document.getElementById("comment").value;
-
-      previewSection.style.display = "block";
-
-      formPreview.innerHTML = `
-        <strong>Camper Name:</strong> ${camperName}<br>
-        <strong>Age:</strong> ${age}<br>
-        <strong>Program:</strong> ${program}<br>
-        <strong>Parent Email:</strong> ${parentEmail}<br>
-        <strong>Notes:</strong> ${comment}
-      `;
-    });
-  </script>
-  <script>
-  const campForm = document.getElementById("campForm");
-  const previewSection = document.getElementById("previewSection");
-  const formPreview = document.getElementById("formPreview");
-
-  campForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const camperName = document.getElementById("camperName").value;
-    const age = document.getElementById("age").value;
-    const program = document.getElementById("program").value;
-
-    previewSection.style.display = "block";
-
-    formPreview.innerHTML = `
-      <strong>Camper Name:</strong> ${camperName}<br>
-      <strong>Age:</strong> ${age}<br>
-      <strong>Program:</strong> ${program}<br>
-    `;
-  });
-</script>
+  
 </body>
 </body>
 </html>
