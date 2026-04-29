@@ -6,101 +6,106 @@
   <title>Register | Camp SparkMotion</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="logo" href="index.html">Camp SparkMotion</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="team.html">Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQ</a>
+        <a href="register.html">Register</a>
+      </div>
+    </nav>
+  </header>
 
-<header class="site-header">
-  <nav class="navbar">
-    <a class="logo" href="index.html">Camp SparkMotion</a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="programs.html">Programs</a>
-      <a href="schedule.html">Schedule</a>
-      <a href="team.html">Team</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="faq.html">FAQ</a>
-      <a href="register.html">Register</a>
-    </div>
-  </nav>
-</header>
+  <main>
+    <section class="page-hero compact">
+      <h1>Register for Camp SparkMotion</h1>
+      <p>Preview your camper’s summer adventure before submitting.</p>
+    </section>
 
-<main>
-  <section class="section two-column">
-  <div class="card form-card">
-    <h2>Camper Registration Form</h2>
+    <section class="section two-column">
+      <div class="card form-card">
+        <h2>Camper Registration Form</h2>
 
-    <form id="campForm" action="#">
-      <div class="form-group">
-        <label for="camperName">Camper Name</label>
-        <input type="text" id="camperName" required>
+        <form id="campForm" action="#">
+          <div class="form-group">
+            <label for="camperName">Camper Name</label>
+            <input type="text" id="camperName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Camper Age</label>
+            <input type="number" id="age" min="5" max="14" required>
+          </div>
+
+          <div class="form-group">
+            <label for="program">Choose a Program</label>
+            <select id="program" required>
+              <option value="">Select one</option>
+              <option value="STEM Lab">STEM Lab</option>
+              <option value="Robotics">Robotics</option>
+              <option value="Basketball Clinic">Basketball Clinic</option>
+              <option value="Soccer Skills">Soccer Skills</option>
+              <option value="Full Camp Experience">Full Camp Experience</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="parentEmail">Parent Email</label>
+            <input type="email" id="parentEmail" required>
+          </div>
+
+          <div class="form-group">
+            <label for="comment">Camper Question or Goal</label>
+            <textarea id="comment" rows="5" placeholder="Allergies, interests, goals, etc."></textarea>
+          </div>
+
+          <button class="btn primary" type="submit">Preview Registration</button>
+        </form>
       </div>
 
-      <div class="form-group">
-        <label for="age">Camper Age</label>
-        <input type="number" id="age" min="5" max="14" required>
+      <div class="card preview-card" id="previewSection" style="display: none;">
+        <h2>Form Preview</h2>
+        <p id="formPreview"></p>
       </div>
+    </section>
+  </main>
 
-      <div class="form-group">
-        <label for="program">Choose a Program</label>
-        <select id="program" required>
-          <option value="">Select one</option>
-          <option value="STEM Lab">STEM Lab</option>
-          <option value="Robotics">Robotics</option>
-          <option value="Basketball Clinic">Basketball Clinic</option>
-          <option value="Soccer Skills">Soccer Skills</option>
-          <option value="Full Camp Experience">Full Camp Experience</option>
-        </select>
-      </div>
+  <footer class="site-footer">
+    <p>&copy; 2026 Camp SparkMotion.</p>
+  </footer>
 
-      <div class="form-group">
-        <label for="parentEmail">Parent Email</label>
-        <input type="email" id="parentEmail" required>
-      </div>
+  <script>
+    const campForm = document.getElementById("campForm");
+    const previewSection = document.getElementById("previewSection");
+    const formPreview = document.getElementById("formPreview");
 
-      <div class="form-group">
-        <label for="comment">Camper Question or Goal</label>
-        <textarea id="comment" rows="5" placeholder="Allergies, interests, goals, etc."></textarea>
-      </div>
+    campForm.addEventListener("submit", function(event) {
+      event.preventDefault();
 
-      <button class="btn primary" type="submit">Preview Registration</button>
-    </form>
-  </div>
+      const camperName = document.getElementById("camperName").value;
+      const age = document.getElementById("age").value;
+      const program = document.getElementById("program").value;
+      const parentEmail = document.getElementById("parentEmail").value;
+      const comment = document.getElementById("comment").value;
 
-  <div class="card preview-card" id="previewSection" style="display: none;">
-    <h2>Form Preview</h2>
-    <p id="formPreview"></p>
-  </div>
-</section>
-</main>
+      previewSection.style.display = "block";
 
-<footer class="site-footer">
-  <p>&copy; 2026 Camp SparkMotion.</p>
-</footer>
-
-<script>
-  const campForm = document.getElementById("campForm");
-  const previewSection = document.getElementById("previewSection");
-  const formPreview = document.getElementById("formPreview");
-
-  campForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    const camperName = document.getElementById("camperName").value;
-    const age = document.getElementById("age").value;
-    const program = document.getElementById("program").value;
-    const parentEmail = document.getElementById("parentEmail").value;
-    const comment = document.getElementById("comment").value;
-
-    previewSection.style.display = "block";
-
-    formPreview.innerHTML = `
-      <strong>Camper Name:</strong> ${camperName}<br>
-      <strong>Age:</strong> ${age}<br>
-      <strong>Program:</strong> ${program}<br>
-      <strong>Parent Email:</strong> ${parentEmail}<br>
-      <strong>Notes:</strong> ${comment}
-    `;
-  });
-</script>
-
+      formPreview.innerHTML = `
+        <strong>Camper Name:</strong> ${camperName}<br>
+        <strong>Age:</strong> ${age}<br>
+        <strong>Program:</strong> ${program}<br>
+        <strong>Parent Email:</strong> ${parentEmail}<br>
+        <strong>Notes:</strong> ${comment}
+      `;
+    });
+  </script>
 </body>
+</html>
