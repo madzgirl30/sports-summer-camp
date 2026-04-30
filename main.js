@@ -52,11 +52,6 @@ if (registrationForm) {
       formMessage.style.color = '#183153';
     }
 
-    /*
-      Intentional security issue for class project:
-      This uses innerHTML with user input, which can allow unwanted HTML to be inserted.
-      In a real website, use textContent or sanitize input before displaying it.
-    */
     unsafePreview.innerHTML = '<strong>Camper question or goal:</strong> ' + comment;
   });
 }
