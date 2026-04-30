@@ -8,7 +8,7 @@ if (navToggle && navLinks) {
   });
 }
 
-// Array requirement: list of camp programs
+// list of camp programs
 const campPrograms = [
   'Robotics Relay',
   'Basketball Analytics',
@@ -18,12 +18,12 @@ const campPrograms = [
   'Speed Science'
 ];
 
-// Loop requirement: print each program to the browser console
+// print each program to the browser console
 for (let i = 0; i < campPrograms.length; i++) {
   console.log('Camp program option ' + (i + 1) + ': ' + campPrograms[i]);
 }
 
-// Conditional statement + form validation + intentional security issue demo
+
 const registrationForm = document.getElementById('registrationForm');
 const formMessage = document.getElementById('formMessage');
 const unsafePreview = document.getElementById('unsafePreview');
